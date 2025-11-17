@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 import pl.example.helloresttemplate.services.FeignHelloWorldService;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/abc")
 @RequiredArgsConstructor
 public class feignCall {
 

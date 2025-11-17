@@ -1,6 +1,10 @@
 spring:
   cloud:
     gateway:
+      httpclient:
+        wiretap: true
+      httpserver:
+        wiretap: true
       routes:
         - id: hello-rest-template
           predicates:
@@ -23,3 +27,11 @@ spring:
               - POST
               - PUT
               - DELETE
+logging:
+  level:
+    reactor:
+      netty: INFO
+    org:
+      springframework:
+        cloud:
+          gateway: TRACE
