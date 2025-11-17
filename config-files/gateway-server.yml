@@ -5,7 +5,7 @@ spring:
 #        wiretap: true
 #      httpserver:
 #        wiretap: true
-      mvc:
+      webmvc:
         routes:
           - id: hello-rest-template
             predicates:
