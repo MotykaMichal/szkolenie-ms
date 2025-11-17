@@ -25,5 +25,8 @@ public class FeignHelloWorldService implements HelloWorldApi {
         } catch (FeignClientException e) {
             log.info("Hello world error!" + e.getMessage());
         }
+
+        return "Błędzik";
+
     }
 }

@@ -9,6 +9,7 @@
         <option value="$PROJECT_DIR$/server-discovery/pom.xml" />
         <option value="$PROJECT_DIR$/hello-world/pom.xml" />
         <option value="$PROJECT_DIR$/hello-rest-template/pom.xml" />
+        <option value="$PROJECT_DIR$/gateway-server/pom.xml" />
       </list>
     </option>
   </component>
