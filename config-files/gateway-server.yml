@@ -5,16 +5,17 @@ spring:
         wiretap: true
       httpserver:
         wiretap: true
-      routes:
-        - id: hello-rest-template
-          predicates:
-            - Path=/api/hello-rest-template/**
-          uri: lb://HELLO-REST-TEMPLATE
-          filters:
-            - RewritePath=/api/hello-rest-template(?<segment>.*),$\{segment}
-            - RewriteLocationResponseHeader=AS_IN_REQUEST, Location, localhost:8080/api/hello-rest-template
-#            - RequestLogger=info,loggerFilter
-#            - RequestTime=8:00,17:00
+      mvc:
+        routes:
+          - id: hello-rest-template
+            predicates:
+              - Path=/api/hello-rest-template/**
+            uri: lb://HELLO-REST-TEMPLATE
+            filters:
+              - RewritePath=/api/hello-rest-template(?<segment>.*),$\{segment}
+              - RewriteLocationResponseHeader=AS_IN_REQUEST, Location, localhost:8080/api/hello-rest-template
+  #            - RequestLogger=info,loggerFilter
+  #            - RequestTime=8:00,17:00
       #discovery:
       #  locator:
       #     enabled: true
