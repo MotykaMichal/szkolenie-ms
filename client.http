@@ -1,0 +1,77 @@
+POST http://localhost:10000/payments
+Accept: application/json
+Content-Type: application/json
+
+{
+  "value": "200 PLN"
+}
+
+###
+
+GET http://localhost:10000/payments/1260044c-3814-4cba-aefc-ccbad56ecd93
+Accept: application/json
+Content-Type: application/json
+
+###
+
+GET http://localhost:10000/payments/started?pageNumer=0
+Accept: application/json
+Content-Type: application/json
+
+###
+
+# /{application}/{profile}[/{label}]
+# /{application}-{profile}.yml
+# /{label}/{application}-{profile}.yml
+# /{application}-{profile}.properties
+# /{label}/{application}-{profile}.properties
+
+###
+
+GET http://localhost:8888/main/application-default.yml
+
+###
+
+GET http://localhost:8888/01-Configuration-server/application-development.json
+
+###
+
+GET http://localhost:8888/05-Http-communication/payments-service-development.properties
+
+###
+
+GET http://localhost:8888/05-Http-communication/shop-service-default.yml
+
+###
+
+GET http://localhost:8888/application/default/01-Configuration-server/data.xml
+
+###
+
+POST http://localhost:8888/encrypt
+Content-Type: text/plain
+
+20
+
+###
+
+POST http://localhost:8888/decrypt
+Content-Type: text/plain
+
+2224efa1bb1cafb2831c8e1429d46f9577820b85141fd1452dc177692aea14bb
+
+###
+
+POST http://localhost:8080/api/shop/orders
+Accept: application/json
+Content-Type: application/json
+
+{
+  "entries": [
+    {
+      "productId": 1,
+      "quantity": 4,
+      "price": 2000
+    }
+  ]
+}
