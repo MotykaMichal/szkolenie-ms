@@ -4,7 +4,7 @@ spring:
       routes:
         - id: hello-rest-template
           predicates:
-            - Path=/api/hello-rest-template/**
+            - Path=/**
           uri: lb://HELLO-REST-TEMPLATE
 #          filters:
 #            - RewritePath=/api/shop(?<segment>.*),$\{segment}
