@@ -1,0 +1,26 @@
+logging:
+  level:
+    org.javamoney.moneta: OFF
+spring:
+  datasource:
+    url: jdbc:postgresql://postgres-server:5432/training
+    username: admin
+    password: admin
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    generate-ddl: true
+    open-in-view: false
+  messages:
+    basename: exceptions
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: kafka-server-pod:9092
+      bindings:
+        payments-out-0:
+          destination: payment-events
+api:
+  time: http://worldtimeapi.org/api/timezone/Europe/Warsaw
+#kubectl create configmap payments-service-config --from-file=application.yml=payments-service-config.yml --dry-run=client -o yaml > payments-service-configmap.yaml
+# kubectl create configmap payments-service-config --from-file=application.yml=payments-service-config.yml

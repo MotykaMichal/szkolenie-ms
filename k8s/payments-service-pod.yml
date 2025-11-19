@@ -1,0 +1,35 @@
+# apiVersion: v1
+# kind: Pod
+# metadata:
+#   name: payments-service
+# spec:
+#   containers:
+#     - name: payments-service
+#       image: landrzejewski/payments-service
+#       ports:
+#         - containerPort: 8080
+#           name: http
+#       env:
+#         - name: SPRING_DATASOURCE_URL
+#           value: "jdbc:postgresql://postgres-server:5432/training"
+#       volumeMounts:
+#         - name: app-config
+#           mountPath: /config/application.yml
+#           subPath: application.yml
+#   volumes:
+#     - name: app-config
+#       configMap:
+#         name: payments-service-config
+apiVersion: v1
+kind: Pod
+metadata:
+  name: payments-service
+spec:
+  containers:
+    - name: payments-service
+      image: landrzejewski/payments-service
+      ports:
+        - containerPort: 8080
+      envFrom:
+        - configMapRef:
+            name: payments-service-env
