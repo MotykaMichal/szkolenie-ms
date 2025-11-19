@@ -39,3 +39,12 @@ spec:
 
 Żeby używać ingress z loadbalancing przynajmniej lokalnie na minikube trzeba zainstalować addon, ale juz nie pamietam nazwy. i przydzielić jakąś pule adresów ip. Inaczej bedzie ciagle pending po:  
 kubectl get svc -n ingress-nginx
+
+
+
+
+  
+
+  
+  https://www.devoteam.com/be/expert-view/every-frontend-needs-its-backend/  
+  https://learn.microsoft.com/en-us/azure/architecture/patterns/backends-for-frontends
