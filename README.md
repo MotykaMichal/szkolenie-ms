@@ -36,3 +36,6 @@ spec:
           cpu: "500m"
 ```
 
+
+Żeby używać ingress z loadbalancing przynajmniej lokalnie na minikube trzeba zainstalować addon, ale juz nie pamietam nazwy. i przydzielić jakąś pule adresów ip. Inaczej bedzie ciagle pending po:  
+kubectl get svc -n ingress-nginx
